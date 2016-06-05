@@ -70,9 +70,7 @@ ui <- fluidPage(
         numericInput("input_seed",
                      label="Set seed:",
                      value=0,
-                     min=0)
-        
-      ),
+                     min=0)),
       
       # Submit button
       actionButton("submit", 
@@ -81,11 +79,16 @@ ui <- fluidPage(
     ),
     
     mainPanel(
-      h3(textOutput("babble")),
+      # Babble text
+      div(align="center",
+          h3(textOutput("babble"))),
       
       hr(),
       
-      textOutput("seed_text")
+      # Seed text
+      div(align="right", 
+          style="color:#aaaaaa;", 
+          textOutput("seed_text"))
     )
     
   )
